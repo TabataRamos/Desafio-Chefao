@@ -14,10 +14,11 @@ const vinhosController = {
     res.json(listaDeVinhos);
   },
   async cadastrarVinhos(req, res) {
-    const { nome, descricao, regiao_id, tipo_id, prato_id, uva_id } = req.body;
+    const { link_foto, descricao, regiao_id, tipo_id, prato_id, uva_id } =
+      req.body;
 
     const novoVinho = await Vinhos.create({
-      nome,
+      link_foto,
       descricao,
       regiao_id,
       tipo_id,
@@ -46,11 +47,12 @@ const vinhosController = {
 
   async atualizarVinho(req, res) {
     const { id } = req.params;
-    const { nome, descricao, regiao_id, tipo_id, prato_id, uva_id } = req.body;
+    const { link_foto, descricao, regiao_id, tipo_id, prato_id, uva_id } =
+      req.body;
 
     const vinhoAtualizado = await Vinhos.update(
       {
-        nome,
+        link_foto,
         descricao,
         regiao_id,
         tipo_id,
@@ -65,6 +67,66 @@ const vinhosController = {
     );
 
     res.json("Vinho Atualizado");
+  },
+
+  async listarVinhosTintos(req, res) {
+    const listaDeVinhosTintos = await Vinhos.findAll({
+      where: {
+        tipo_id: 1,
+      },
+      include: [
+        { model: Regiao, attributes: ["pais"] },
+        { model: Tipo, attributes: ["nome_tipo"] },
+        { model: Pratos, attributes: ["nome_prato"] },
+        { model: Uva, attributes: ["nome_uva"] },
+      ],
+    });
+    res.json(listaDeVinhosTintos);
+  },
+
+  async listarVinhosBrancos(req, res) {
+    const listaDeVinhosBrancos = await Vinhos.findAll({
+      where: {
+        tipo_id: 2,
+      },
+      include: [
+        { model: Regiao, attributes: ["pais"] },
+        { model: Tipo, attributes: ["nome_tipo"] },
+        { model: Pratos, attributes: ["nome_prato"] },
+        { model: Uva, attributes: ["nome_uva"] },
+      ],
+    });
+    res.json(listaDeVinhosBrancos);
+  },
+
+  async listarVinhosRoses(req, res) {
+    const listaDeVinhosRoses = await Vinhos.findAll({
+      where: {
+        tipo_id: 3,
+      },
+      include: [
+        { model: Regiao, attributes: ["pais"] },
+        { model: Tipo, attributes: ["nome_tipo"] },
+        { model: Pratos, attributes: ["nome_prato"] },
+        { model: Uva, attributes: ["nome_uva"] },
+      ],
+    });
+    res.json(listaDeVinhosRoses);
+  },
+
+  async listarVinhosEspumantes(req, res) {
+    const listaDeVinhosEspumantes = await Vinhos.findAll({
+      where: {
+        tipo_id: 4,
+      },
+      include: [
+        { model: Regiao, attributes: ["pais"] },
+        { model: Tipo, attributes: ["nome_tipo"] },
+        { model: Pratos, attributes: ["nome_prato"] },
+        { model: Uva, attributes: ["nome_uva"] },
+      ],
+    });
+    res.json(listaDeVinhosEspumantes);
   },
 };
 

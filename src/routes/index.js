@@ -2,9 +2,14 @@ const express = require("express");
 const vinhosController = require("../controllers/vinhosController");
 const routes = express.Router();
 
-routes.get("/vinho/lista", vinhosController.listarVinhos);
-routes.post("/vinho/criar", vinhosController.cadastrarVinhos);
-routes.delete("/vinho/:id/deletar", vinhosController.deletarVinho);
-routes.put("/vinho/:id/atualizar", vinhosController.atualizarVinho);
+routes.get("/vinhos/lista", vinhosController.listarVinhos);
+routes.post("/vinhos/criar", vinhosController.cadastrarVinhos);
+routes.delete("/vinhos/:id/deletar", vinhosController.deletarVinho);
+routes.put("/vinhos/:id/atualizar", vinhosController.atualizarVinho);
+
+routes.get("/vinhos/tintos", vinhosController.listarVinhosTintos);
+routes.get("/vinhos/brancos", vinhosController.listarVinhosBrancos);
+routes.get("/vinhos/roses", vinhosController.listarVinhosRoses);
+routes.get("/vinhos/espumantes", vinhosController.listarVinhosEspumantes);
 
 module.exports = routes;
