@@ -1,17 +1,8 @@
-const Regiao = require("./Regiao");
 const Tipo = require("./Tipo");
 const Vinhos = require("./Vinhos");
 const Pratos = require("./Pratos");
-const Uva = require('./Uva')
+const Uva = require("./Uva");
 const Vinhos_Pratos = require("./Vinhos_Pratos");
-
-Vinhos.belongsTo(Regiao, {
-  foreignKey: "regiao_id",
-});
-
-Regiao.hasMany(Vinhos, {
-  foreignKey: "regiao_id",
-});
 
 Vinhos.belongsTo(Tipo, {
   foreignKey: "tipo_id",
@@ -40,7 +31,6 @@ Uva.hasMany(Vinhos, {
 });
 
 module.exports = {
-  Regiao,
   Vinhos,
   Tipo,
   Pratos,

@@ -1,10 +1,9 @@
-const { Vinhos, Regiao, Tipo, Pratos, Uva } = require("../models");
+const { Vinhos, Tipo, Pratos, Uva } = require("../models");
 
 const vinhosController = {
   async listarVinhos(req, res) {
     const listaDeVinhos = await Vinhos.findAll({
       include: [
-        { model: Regiao, attributes: ["pais"] },
         { model: Tipo, attributes: ["nome_tipo"] },
         { model: Pratos, attributes: ["nome_prato"] },
         { model: Uva, attributes: ["nome_uva"] },
@@ -14,13 +13,11 @@ const vinhosController = {
     res.json(listaDeVinhos);
   },
   async cadastrarVinhos(req, res) {
-    const { link_foto, descricao, regiao_id, tipo_id, prato_id, uva_id } =
-      req.body;
+    const { link_foto, descricao, tipo_id, prato_id, uva_id } = req.body;
 
     const novoVinho = await Vinhos.create({
       link_foto,
       descricao,
-      regiao_id,
       tipo_id,
       prato_id,
       uva_id,
@@ -47,14 +44,12 @@ const vinhosController = {
 
   async atualizarVinho(req, res) {
     const { id } = req.params;
-    const { link_foto, descricao, regiao_id, tipo_id, prato_id, uva_id } =
-      req.body;
+    const { link_foto, descricao, tipo_id, prato_id, uva_id } = req.body;
 
     const vinhoAtualizado = await Vinhos.update(
       {
         link_foto,
         descricao,
-        regiao_id,
         tipo_id,
         prato_id,
         uva_id,
@@ -75,7 +70,6 @@ const vinhosController = {
         tipo_id: 1,
       },
       include: [
-        { model: Regiao, attributes: ["pais"] },
         { model: Tipo, attributes: ["nome_tipo"] },
         { model: Pratos, attributes: ["nome_prato"] },
         { model: Uva, attributes: ["nome_uva"] },
@@ -90,7 +84,6 @@ const vinhosController = {
         tipo_id: 2,
       },
       include: [
-        { model: Regiao, attributes: ["pais"] },
         { model: Tipo, attributes: ["nome_tipo"] },
         { model: Pratos, attributes: ["nome_prato"] },
         { model: Uva, attributes: ["nome_uva"] },
@@ -105,7 +98,6 @@ const vinhosController = {
         tipo_id: 3,
       },
       include: [
-        { model: Regiao, attributes: ["pais"] },
         { model: Tipo, attributes: ["nome_tipo"] },
         { model: Pratos, attributes: ["nome_prato"] },
         { model: Uva, attributes: ["nome_uva"] },
@@ -120,7 +112,6 @@ const vinhosController = {
         tipo_id: 4,
       },
       include: [
-        { model: Regiao, attributes: ["pais"] },
         { model: Tipo, attributes: ["nome_tipo"] },
         { model: Pratos, attributes: ["nome_prato"] },
         { model: Uva, attributes: ["nome_uva"] },
