@@ -20,13 +20,13 @@ const Vinhos = db.define(
       type: DataTypes.TEXT,
     },
 
-    createdAt: {
-      type: DataTypes.DATE,
-    },
+    // createdAt: {
+    //   type: DataTypes.DATE,
+    // },
 
-    updatedAt: {
-      type: DataTypes.DATE,
-    },
+    // updatedAt: {
+    //   type: DataTypes.DATE,
+    // },
 
     tipo_id: {
       type: DataTypes.INTEGER,
@@ -46,6 +46,7 @@ const Vinhos = db.define(
   },
   {
     tableName: "vinhos",
+    timestamps: false,
   }
 );
 

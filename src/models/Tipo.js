@@ -14,16 +14,17 @@ const Tipo = db.define(
       type: DataTypes.STRING,
     },
 
-    createdAt: {
-      type: DataTypes.DATE,
-    },
+    // createdAt: {
+    //   type: DataTypes.DATE,
+    // },
 
-    updatedAt: {
-      type: DataTypes.DATE,
-    },
+    // updatedAt: {
+    //   type: DataTypes.DATE,
+    // },
   },
   {
     tableName: "tipo",
+    timestamps: false,
   }
 );
 

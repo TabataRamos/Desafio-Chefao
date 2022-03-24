@@ -22,16 +22,17 @@ const Vinhos_Pratos = db.define(
       },
     },
 
-    createdAt: {
-      type: DataTypes.DATE,
-    },
+    // createdAt: {
+    //   type: DataTypes.DATE,
+    // },
 
-    updatedAt: {
-      type: DataTypes.DATE,
-    },
+    // updatedAt: {
+    //   type: DataTypes.DATE,
+    // },
   },
   {
     tableName: "vinhos_pratos",
+    timestamps: false,
   }
 );
 
