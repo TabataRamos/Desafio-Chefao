@@ -119,6 +119,20 @@ const vinhosController = {
     });
     res.json(listaDeVinhosEspumantes);
   },
+  async listarVinho(req, res) {
+    const { id } = req.params;
+    const vinho = await Vinhos.findAll({
+      where: {
+        id: id,
+      },
+      include: [
+        { model: Tipo, attributes: ["nome_tipo"] },
+        { model: Pratos, attributes: ["nome_prato"] },
+        { model: Uva, attributes: ["nome_uva"] },
+      ],
+    });
+    res.json(vinho);
+  },
 };
 
 module.exports = vinhosController;

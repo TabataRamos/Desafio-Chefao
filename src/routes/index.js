@@ -16,5 +16,5 @@ routes.get(
   cors(),
   vinhosController.listarVinhosEspumantes
 );
-
+routes.get("/vinhos/:id", cors(), vinhosController.listarVinho);
 module.exports = routes;
