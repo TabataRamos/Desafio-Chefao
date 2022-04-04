@@ -12,7 +12,11 @@ routes.put("/vinhos/:id/atualizar", vinhosController.atualizarVinho);
 routes.get("/vinhos/tintos", cors(), vinhosController.listarVinhosTintos);
 routes.get("/vinhos/brancos", cors(), vinhosController.listarVinhosBrancos);
 routes.get("/vinhos/roses", cors(), vinhosController.listarVinhosRoses);
-routes.get("/vinhos/espumantes", cors(), vinhosController.listarVinhosEspumantes);
+routes.get(
+  "/vinhos/espumantes",
+  cors(),
+  vinhosController.listarVinhosEspumantes
+);
 routes.get("/vinhos/:id", cors(), vinhosController.listarVinho);
 routes.get("/harmonizacao/:id", cors(), pratosController.harmonizacoes);
 
