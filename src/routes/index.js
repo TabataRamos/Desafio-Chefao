@@ -2,7 +2,6 @@ const express = require("express");
 const vinhosController = require("../controllers/vinhosController");
 const pratosController = require("../controllers/pratosController");
 const routes = express.Router();
-const cors = require("cors");
 
 routes.get("/vinhos/lista", vinhosController.listarVinhos);
 routes.post("/vinhos/criar", vinhosController.cadastrarVinhos);

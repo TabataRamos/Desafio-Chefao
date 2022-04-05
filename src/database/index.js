@@ -15,7 +15,7 @@ let db = {};
 try {
   db = new Sequelize(DB_NAME, DB_USER, DB_PASS, DB_CONFIG);
 } catch (error) {
-  console.error("Erro ao tentar conexão com banco de dados");
+  console.error("Erro ao tentar conexão com banco de dados", error);
 }
 
 async function hasConection() {
