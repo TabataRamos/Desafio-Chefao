@@ -12,7 +12,7 @@ routes.get("/vinhos/tintos", vinhosController.listarVinhosTintos);
 routes.get("/vinhos/brancos", vinhosController.listarVinhosBrancos);
 routes.get("/vinhos/roses", vinhosController.listarVinhosRoses);
 routes.get("/vinhos/espumantes", vinhosController.listarVinhosEspumantes);
-routes.get("/vinhos/:id", vinhosController.listarVinho);
+routes.get("/vinho/:id", vinhosController.listarVinho);
 routes.get("/harmonizacao/:id", pratosController.harmonizacoes);
 
 module.exports = routes;
