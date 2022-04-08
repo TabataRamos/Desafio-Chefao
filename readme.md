@@ -1,4 +1,3 @@
-# Work In Progress...
 # VintAge
 
 <img  src="https://i.imgur.com/RS8qE0o.png"  width="300px;"/>
