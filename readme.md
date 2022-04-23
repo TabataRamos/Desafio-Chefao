@@ -88,7 +88,7 @@ Atualmente, o projeto se encontra finalizado com as seguintes funcionalidades:
 
 <a  href="https://www.behance.net/laviniaunder"><img  src="https://i.imgur.com/ul9nFyg.jpg"  width="100px;"/> </a> @lavinie
 
-<a  href="https://www.behance.net/christianfrana1"><img  src="https://i.imgur.com/RsXExzN.jpg"  width="100px;"/> </a> @Cristian
+<a  href="https://www.behance.net/christianfrana1"><img  src="https://i.imgur.com/OigBkpR.png"  width="100px;"/> </a> @Cristian
 
 </p>
 
